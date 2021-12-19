@@ -1,22 +1,18 @@
 let counter = 0;
 let setInterval_id = null;
-
 let timer_callback = function() {
     counter++;
     document.getElementById('timer-op').innerText = counter;
 }
-
 let pause_timer_btn = document.getElementById('pause-timer');
 pause_timer_btn.addEventListener('click', function() {
     clearInterval(setInterval_id);
 });
-
 let resume_timer_btn = document.getElementById('resume-timer');
 resume_timer_btn.addEventListener('click', function() {
     setInterval_id = setInterval(timer_callback, 1000);
     this.innerText = "Resume";
 });
-
 let reset_timer_btn = document.getElementById('reset-timer');
 reset_timer_btn.addEventListener('click', function() {
     clearInterval(setInterval_id);
